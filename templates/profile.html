@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Profile</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#0f0f0f;
+    color:white;
+    padding:20px;
+}
+
+/* CARD */
+.container{
+    max-width:600px;
+    margin:auto;
+}
+
+.card{
+    background:#171717;
+    padding:30px;
+    border-radius:15px;
+    border:1px solid rgba(212,175,55,.3);
+}
+
+h1{
+    color:#d4af37;
+    margin-bottom:20px;
+}
+
+.info{
+    margin:10px 0;
+    padding:12px;
+    background:#222;
+    border-radius:10px;
+}
+
+.badge{
+    display:inline-block;
+    padding:5px 12px;
+    border-radius:20px;
+    background:#d4af37;
+    color:black;
+    font-weight:600;
+}
+
+a{
+    display:inline-block;
+    margin-top:20px;
+    color:#d4af37;
+    text-decoration:none;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="card">
+
+        <h1>👤 User Profile</h1>
+
+        <div class="info">Name: {{ username }}</div>
+        <div class="info">Plan: <span class="badge">{{ plan }}</span></div>
+        <div class="info">Status: {{ status }}</div>
+        <div class="info">Expiry: {{ expiry }}</div>
+        <div class="info">Attendance: {{ attendance }} days</div>
+        <div class="info">🔥 Streak: {{ streak }} days</div>
+
+        <a href="/dashboard">← Back to Dashboard</a>
+
+    </div>
+
+</div>
+
+</body>
+</html>

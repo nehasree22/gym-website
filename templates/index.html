@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elite Fitness Club</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+
+<nav class="navbar">
+
+    <div class="logo">ELITE FITNESS</div>
+
+    <ul class="nav-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#plans">Plans</a></li>
+        <li><a href="#trainers">Trainers</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="/login">Login</a></li>
+    </ul>
+
+</nav>
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <h1>TRANSFORM YOUR BODY</h1>
+
+        <h2>UNLOCK YOUR POTENTIAL</h2>
+
+        <p>
+            Kadapa's Premium Fitness Destination.
+            Build Strength, Confidence & Discipline.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="/signup" class="btn gold-btn">
+                Join Now
+            </a>
+
+            <a href="#plans" class="btn outline-btn">
+                View Plans
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- STATS -->
+
+<section class="stats">
+
+    <div class="stat-box">
+        <h3>1500+</h3>
+        <p>Active Members</p>
+    </div>
+
+    <div class="stat-box">
+        <h3>10+</h3>
+        <p>Certified Trainers</p>
+    </div>
+
+    <div class="stat-box">
+        <h3>5+</h3>
+        <p>Years Experience</p>
+    </div>
+
+    <div class="stat-box">
+        <h3>98%</h3>
+        <p>Client Satisfaction</p>
+    </div>
+
+</section>
+
+<!-- WHY US -->
+
+<section class="why-us">
+
+    <h2>Why Choose Elite Fitness?</h2>
+
+    <div class="features">
+
+        <div class="feature-card">
+            <h3>🏋️ Modern Equipment</h3>
+            <p>Latest gym machines and premium workout stations.</p>
+        </div>
+
+        <div class="feature-card">
+            <h3>👨‍🏫 Expert Trainers</h3>
+            <p>Certified trainers focused on your transformation.</p>
+        </div>
+
+        <div class="feature-card">
+            <h3>🥗 Nutrition Support</h3>
+            <p>Diet plans and guidance tailored to your goals.</p>
+        </div>
+
+        <div class="feature-card">
+            <h3>⏰ Flexible Timings</h3>
+            <p>Train at your convenience throughout the week.</p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- MEMBERSHIP -->
+
+<section class="plans" id="plans">
+
+    <h2>Membership Plans</h2>
+
+    <div class="plan-container">
+
+        <div class="plan-card">
+
+            <h3>Basic</h3>
+
+            <h1>₹999</h1>
+
+            <p>✔ 1 Month Access</p>
+            <p>✔ Locker Facility</p>
+            <p>✔ Fitness Assessment</p>
+            <p>✔ Gym Equipment Access</p>
+
+        </div>
+
+        <div class="plan-card featured">
+
+            <h3>🔥 Most Popular</h3>
+
+            <h1>₹2499</h1>
+
+            <p>✔ 3 Months Access</p>
+            <p>✔ Workout Guidance</p>
+            <p>✔ Diet Suggestions</p>
+            <p>✔ Priority Support</p>
+
+        </div>
+
+        <div class="plan-card">
+
+            <h3>Elite</h3>
+
+            <h1>₹7999</h1>
+
+            <p>✔ 1 Year Access</p>
+            <p>✔ Nutrition Support</p>
+            <p>✔ Personal Guidance</p>
+            <p>✔ Premium Benefits</p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- TRAINERS -->
+
+<section class="trainers" id="trainers">
+
+    <h2>Meet Our Trainers</h2>
+
+    <div class="trainer-container">
+
+        <div class="trainer-card">
+            <img src="https://images.unsplash.com/photo-1567013127542-490d757e51fc?w=500">
+            <h3>Rahul Sharma</h3>
+            <p>Strength & Conditioning Coach</p>
+        </div>
+
+        <div class="trainer-card">
+            <img src="https://images.unsplash.com/photo-1549476464-37392f717541?w=500">
+            <h3>Vikram Reddy</h3>
+            <p>Certified Personal Trainer</p>
+        </div>
+
+        <div class="trainer-card">
+            <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=500">
+            <h3>Arjun Kumar</h3>
+            <p>Fitness & Nutrition Expert</p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- GALLERY -->
+
+<section class="gallery" id="gallery">
+
+    <h2>Transformation Gallery</h2>
+
+    <div class="gallery-container">
+
+        <div class="gallery-card">
+            <img src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=800">
+            <div class="gallery-overlay">
+                <h3>Weight Loss Journey</h3>
+            </div>
+        </div>
+
+        <div class="gallery-card">
+            <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=800">
+            <div class="gallery-overlay">
+                <h3>Muscle Building</h3>
+            </div>
+        </div>
+
+        <div class="gallery-card">
+            <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?w=800">
+            <div class="gallery-overlay">
+                <h3>Strength Training</h3>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- BMI -->
+
+<section class="why-us">
+
+    <h2>Free BMI Calculator</h2>
+
+    <div class="feature-card">
+
+        <h3>Know Your Fitness Level</h3>
+
+        <p>
+            BMI Calculator functionality will be connected
+            in the next backend phase.
+        </p>
+
+    </div>
+
+</section>
+
+<!-- TESTIMONIALS -->
+
+<section class="testimonials">
+
+    <h2>What Our Members Say</h2>
+
+    <div class="testimonial-container">
+
+        <div class="testimonial-card">
+            ⭐⭐⭐⭐⭐
+            <p>"Lost 12kg in 4 months. Amazing trainers."</p>
+            <h4>- Ramesh</h4>
+        </div>
+
+        <div class="testimonial-card">
+            ⭐⭐⭐⭐⭐
+            <p>"Best gym in Kadapa. Excellent equipment."</p>
+            <h4>- Suresh</h4>
+        </div>
+
+        <div class="testimonial-card">
+            ⭐⭐⭐⭐⭐
+            <p>"Professional staff and motivating atmosphere."</p>
+            <h4>- Kiran</h4>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- TIMINGS -->
+
+<section class="why-us">
+
+    <h2>Gym Timings</h2>
+
+    <div class="feature-card">
+
+        <h3>Monday - Saturday</h3>
+        <p>5:00 AM - 10:00 PM</p>
+
+        <br>
+
+        <h3>Sunday</h3>
+        <p>6:00 AM - 1:00 PM</p>
+
+    </div>
+
+</section>
+
+<!-- CTA -->
+
+<section class="cta">
+
+    <h2>Ready To Start Your Fitness Journey?</h2>
+
+    <p>
+        Join hundreds of members transforming
+        their lives every day.
+    </p>
+
+    <a href="/signup" class="cta-btn">
+        Join Today
+    </a>
+
+</section>
+
+<!-- MAP -->
+
+<section class="contact">
+
+    <h2>Find Us</h2>
+
+    <iframe
+    src="https://www.google.com/maps?q=Kadapa&output=embed"
+    width="100%"
+    height="400"
+    style="border:0;border-radius:20px;">
+    </iframe>
+
+</section>
+
+<!-- CONTACT -->
+
+<section class="contact" id="contact">
+
+    <h2>Contact Us</h2>
+
+    <p>📍 Near RTC Bus Stand, Kadapa</p>
+    <p>📞 +91 9876543210</p>
+    <p>✉ info@elitefitness.com</p>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+    <h3>Elite Fitness Club</h3>
+
+    <div class="socials">
+
+        <i class="fab fa-instagram"></i>
+        <i class="fab fa-facebook"></i>
+        <i class="fab fa-youtube"></i>
+        <i class="fab fa-whatsapp"></i>
+
+    </div>
+
+    <p>
+        © 2026 Elite Fitness Club.
+        All Rights Reserved.
+    </p>
+
+</footer>
+
+<!-- WHATSAPP -->
+
+<a href="https://wa.me/919876543210?text=Hi%20I%20am%20interested%20in%20joining%20Elite%20Fitness"
+class="whatsapp-btn">
+
+    <i class="fab fa-whatsapp"></i>
+
+</a>
+
+</body>
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>BMI Calculator</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#0f0f0f;
+    color:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+    padding:20px;
+}
+
+.card{
+    width:100%;
+    max-width:500px;
+    background:#171717;
+    padding:35px;
+    border-radius:20px;
+    border:1px solid rgba(212,175,55,.2);
+}
+
+h1{
+    color:#d4af37;
+    text-align:center;
+    margin-bottom:25px;
+}
+
+input{
+    width:100%;
+    padding:14px;
+    margin:10px 0;
+    border:none;
+    border-radius:10px;
+    background:#222;
+    color:white;
+}
+
+button{
+    width:100%;
+    padding:14px;
+    border:none;
+    border-radius:10px;
+    background:#d4af37;
+    color:black;
+    font-weight:700;
+    cursor:pointer;
+}
+
+/* ===== POPUP ===== */
+.popup {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.8);
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-content {
+    background: #171717;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    border: 1px solid #d4af37;
+    width: 300px;
+}
+
+.popup-content h2 {
+    color: #d4af37;
+    margin-bottom: 10px;
+}
+
+.close-btn {
+    margin-top: 15px;
+    padding: 10px 15px;
+    background: #d4af37;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 8px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+<h1>BMI Calculator 📊</h1>
+
+<form method="POST">
+<input type="number" name="height" placeholder="Height (cm)" required>
+<input type="number" name="weight" placeholder="Weight (kg)" required>
+<button type="submit">Calculate BMI</button>
+</form>
+
+</div>
+
+<!-- POPUP -->
+<div class="popup" id="popup">
+    <div class="popup-content">
+        <h2>Your BMI Result</h2>
+        <p><b>{{ bmi }}</b></p>
+        <p>{{ category }}</p>
+        <button class="close-btn" onclick="closePopup()">OK</button>
+    </div>
+</div>
+
+<script>
+function showPopup(){
+    document.getElementById("popup").style.display = "flex";
+}
+
+function closePopup(){
+    document.getElementById("popup").style.display = "none";
+}
+</script>
+
+{% if bmi %}
+<script>
+    showPopup();
+</script>
+{% endif %}
+
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Payment</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#0f0f0f;
+    color:white;
+    padding:20px;
+}
+
+/* CONTAINER */
+.container{
+    max-width:600px;
+    margin:auto;
+}
+
+/* CARD */
+.card{
+    background:#171717;
+    padding:30px;
+    border-radius:15px;
+    border:1px solid rgba(212,175,55,.3);
+}
+
+h1{
+    color:#d4af37;
+    margin-bottom:20px;
+}
+
+.plan{
+    padding:15px;
+    background:#222;
+    border-radius:10px;
+    margin:10px 0;
+    cursor:pointer;
+    border:1px solid transparent;
+}
+
+.plan:hover{
+    border-color:#d4af37;
+}
+
+/* BUTTON */
+.btn{
+    width:100%;
+    padding:15px;
+    background:#d4af37;
+    color:black;
+    border:none;
+    border-radius:10px;
+    font-weight:700;
+    margin-top:20px;
+    cursor:pointer;
+}
+
+.note{
+    margin-top:15px;
+    font-size:13px;
+    color:#aaa;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="card">
+
+        <h1>💳 Choose Your Plan</h1>
+
+        <div class="plan">Basic - ₹999 / month</div>
+        <div class="plan">Pro - ₹2499 / 3 months</div>
+        <div class="plan">Elite - ₹7999 / year</div>
+
+        <button class="btn">Pay & Activate Membership</button>
+
+        <p class="note">
+            * This is a demo payment system. No real transaction happens.
+        </p>
+
+        <a href="/dashboard" style="color:#d4af37; display:block; margin-top:15px;">
+            ← Back to Dashboard
+        </a>
+
+    </div>
+
+</div>
+
+</body>
+</html>

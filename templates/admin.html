@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Admin Panel</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#0f0f0f;
+    color:white;
+    padding:20px;
+}
+
+/* HEADER */
+.header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:30px;
+    flex-wrap:wrap;
+    gap:15px;
+}
+
+.header h1{
+    color:#d4af37;
+}
+
+/* SEARCH */
+.search-box{
+    margin-bottom:25px;
+}
+
+.search-box form{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+}
+
+.search-box input{
+    flex:1;
+    min-width:220px;
+    padding:12px;
+    border:none;
+    border-radius:10px;
+    background:#171717;
+    color:white;
+}
+
+.search-box button{
+    padding:12px 20px;
+    border:none;
+    border-radius:10px;
+    background:#d4af37;
+    color:black;
+    font-weight:600;
+    cursor:pointer;
+}
+
+/* STATS */
+.stats{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:15px;
+    margin-bottom:30px;
+}
+
+.stat{
+    background:#171717;
+    padding:20px;
+    border-radius:12px;
+    border:1px solid rgba(212,175,55,.2);
+    transition:0.3s;
+}
+
+.stat:hover{
+    transform:scale(1.05);
+}
+
+.stat h2{
+    color:#d4af37;
+    margin-bottom:10px;
+}
+
+.stat p{
+    font-size:22px;
+    font-weight:700;
+}
+
+/* TABLE */
+.table-container{
+    overflow-x:auto;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    min-width:700px;
+    background:#171717;
+    border-radius:12px;
+    overflow:hidden;
+}
+
+th,td{
+    padding:14px;
+    border-bottom:1px solid #333;
+    text-align:left;
+}
+
+th{
+    color:#d4af37;
+}
+
+tr:hover{
+    background:#1f1f1f;
+}
+
+/* BUTTON */
+.logout{
+    background:#d4af37;
+    color:black;
+    padding:10px 15px;
+    border-radius:10px;
+    text-decoration:none;
+    font-weight:600;
+}
+
+@media(max-width:768px){
+
+    .header{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+    .stats{
+        grid-template-columns:1fr;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="header">
+    <h1>Admin Dashboard 👑</h1>
+
+    <a class="logout" href="/logout">
+        Logout
+    </a>
+</div>
+
+<!-- SEARCH -->
+
+<div class="search-box">
+
+    <form method="GET" action="/admin-dashboard">
+
+        <input
+        type="text"
+        name="search"
+        placeholder="Search by Name or Email..."
+        value="{{ search }}">
+
+        <button type="submit">
+            Search
+        </button>
+
+    </form>
+
+</div>
+
+<!-- STATS -->
+
+<div class="stats">
+
+    <div class="stat">
+        <h2>Total Users</h2>
+        <p>{{ total_users }}</p>
+    </div>
+
+    <div class="stat">
+        <h2>Active Members</h2>
+        <p>{{ active_users }}</p>
+    </div>
+
+    <div class="stat">
+        <h2>Inactive Members</h2>
+        <p>{{ inactive_users }}</p>
+    </div>
+
+    <div class="stat">
+        <h2>Today's Attendance</h2>
+        <p>{{ today_attendance }}</p>
+    </div>
+
+    <div class="stat">
+        <h2>Basic</h2>
+        <p>{{ basic }}</p>
+    </div>
+
+    <div class="stat">
+        <h2>Pro</h2>
+        <p>{{ pro }}</p>
+    </div>
+
+    <div class="stat">
+        <h2>Elite</h2>
+        <p>{{ elite }}</p>
+    </div>
+
+</div>
+
+<!-- USERS TABLE -->
+
+<div class="table-container">
+
+<table>
+
+<tr>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Plan</th>
+    <th>Status</th>
+    <th>Expiry</th>
+</tr>
+
+{% for u in users %}
+<tr>
+    <td>{{ u[0] }}</td>
+    <td>{{ u[1] }}</td>
+    <td>{{ u[2] }}</td>
+    <td>{{ u[3] }}</td>
+    <td>{{ u[4] }}</td>
+</tr>
+
+<tr>
+<td colspan="5">
+
+<form action="/assign-plan" method="POST"
+style="padding:15px;display:flex;gap:10px;flex-wrap:wrap;">
+
+    <input
+        type="hidden"
+        name="email"
+        value="{{ u[1] }}">
+
+<select
+    name="workout"
+    required
+    style="padding:10px;border-radius:8px;border:none;">
+
+    <option value="Weight Loss">Weight Loss</option>
+    <option value="Muscle Gain">Muscle Gain</option>
+    <option value="Strength Training">Strength Training</option>
+    <option value="General Fitness">General Fitness</option>
+
+</select>
+
+<select
+    name="diet"
+    required
+    style="padding:10px;border-radius:8px;border:none;">
+
+    <option value="Weight Loss Diet">Weight Loss Diet</option>
+    <option value="High Protein Diet">High Protein Diet</option>
+    <option value="Balanced Diet">Balanced Diet</option>
+    <option value="Keto Diet">Keto Diet</option>
+
+</select>
+    <button
+        type="submit"
+        style="
+        padding:10px 15px;
+        border:none;
+        border-radius:8px;
+        cursor:pointer;
+        font-weight:600;">
+        Assign Plan
+    </button>
+
+</form>
+
+</td>
+</tr>
+
+{% endfor %}
+
+</table>
+
+</div>
+
+</body>
+</html>

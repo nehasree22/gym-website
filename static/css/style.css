@@ -1,0 +1,273 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#0f0f0f;
+    color:white;
+    overflow-x:hidden;
+}
+
+/* ================= NAVBAR ================= */
+
+.navbar{
+    position:fixed;
+    width:100%;
+    top:0;
+    left:0;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 8%;
+    z-index:1000;
+    background:rgba(0,0,0,0.85);
+    backdrop-filter:blur(12px);
+    border-bottom:1px solid rgba(212,175,55,0.15);
+}
+
+.logo{
+    color:#d4af37;
+    font-size:28px;
+    font-weight:800;
+}
+
+.nav-links{
+    display:flex;
+    gap:25px;
+    list-style:none;
+}
+
+.nav-links a{
+    text-decoration:none;
+    color:white;
+    font-weight:500;
+    transition:.3s;
+}
+
+.nav-links a:hover{
+    color:#d4af37;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+    min-height:100vh;
+    background:
+    linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.85)),
+    url("https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1500&q=80");
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:100px 20px;
+}
+
+.hero-content{
+    max-width:900px;
+}
+
+.hero h1{
+    font-size:70px;
+    color:#d4af37;
+    font-weight:800;
+}
+
+.hero h2{
+    font-size:55px;
+}
+
+.hero p{
+    font-size:20px;
+    color:#ddd;
+    margin-top:20px;
+}
+
+.hero-buttons{
+    margin-top:40px;
+}
+
+.btn{
+    padding:14px 30px;
+    border-radius:50px;
+    margin:10px;
+    font-weight:600;
+    text-decoration:none;
+    display:inline-block;
+}
+
+.gold-btn{
+    background:#d4af37;
+    color:black;
+}
+
+.outline-btn{
+    border:2px solid #d4af37;
+    color:white;
+}
+
+/* ================= GRID SYSTEM (FIXED) ================= */
+
+.stats,
+.features,
+.gallery-container,
+.testimonial-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+    padding:80px 8%;
+}
+
+/* ================= CARDS ================= */
+
+.stat-box,
+.feature-card,
+.testimonial-card{
+    background:#171717;
+    padding:30px;
+    border-radius:15px;
+    border:1px solid rgba(212,175,55,0.15);
+}
+
+/* ================= SECTIONS ================= */
+
+.why-us,
+.plans,
+.trainers,
+.gallery,
+.testimonials,
+.cta,
+.contact{
+    padding:90px 8%;
+    text-align:center;
+}
+
+/* ================= TITLES ================= */
+
+h2{
+    font-size:45px;
+    color:#d4af37;
+    margin-bottom:40px;
+}
+
+/* ================= PLAN & TRAINER ================= */
+
+.plan-container,
+.trainer-container{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:25px;
+}
+
+.plan-card,
+.trainer-card{
+    width:320px;
+    background:#171717;
+    padding:30px;
+    border-radius:20px;
+    border:1px solid rgba(212,175,55,0.15);
+}
+
+/* ================= IMAGE ================= */
+
+.trainer-card img{
+    width:100%;
+    height:300px;
+    object-fit:cover;
+    border-radius:10px;
+}
+
+/* ================= CTA ================= */
+
+.cta{
+    background:linear-gradient(rgba(212,175,55,0.08), rgba(0,0,0,0.9));
+}
+
+/* ================= BUTTON ================= */
+
+.cta-btn{
+    padding:14px 30px;
+    background:#d4af37;
+    color:black;
+    border-radius:50px;
+    display:inline-block;
+    text-decoration:none;
+    font-weight:600;
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+    background:black;
+    text-align:center;
+    padding:25px;
+    color:#999;
+}
+
+/* ================= WHATSAPP ================= */
+
+.whatsapp-btn{
+    position:fixed;
+    right:20px;
+    bottom:20px;
+    width:65px;
+    height:65px;
+    background:#25D366;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:30px;
+    color:white;
+    text-decoration:none;
+    z-index:9999;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:1024px){
+    .hero h1{font-size:55px;}
+    .hero h2{font-size:40px;}
+}
+
+@media(max-width:768px){
+
+    .navbar{
+        flex-direction:column;
+        gap:10px;
+    }
+
+    .nav-links{
+        display:none;
+    }
+
+    .hero h1{font-size:38px;}
+    .hero h2{font-size:28px;}
+
+    .hero p{font-size:16px;}
+
+    .plan-card,
+    .trainer-card{
+        width:100%;
+    }
+}
+
+@media(max-width:480px){
+
+    .hero h1{font-size:30px;}
+    .hero h2{font-size:22px;}
+
+    h2{font-size:28px;}
+
+    .btn{
+        display:block;
+        width:80%;
+        margin:10px auto;
+    }
+}
